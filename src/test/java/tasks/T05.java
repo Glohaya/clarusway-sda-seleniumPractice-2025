@@ -35,7 +35,6 @@ public class T05 {
         //Close the driver.
         Thread.sleep(3000);
         driver.quit();
-
     }
 }
 
