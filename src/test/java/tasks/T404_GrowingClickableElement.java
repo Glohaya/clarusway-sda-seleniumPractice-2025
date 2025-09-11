@@ -29,20 +29,21 @@ public class T404_GrowingClickableElement {
     }
 
     @Test
-    void growingClick() {
+    void growingClick()throws InterruptedException {
         // Click "click me" button
-        WebElement theButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='growbutton']")));
+        WebElement theButton = driver.findElement(By.xpath("//button[@id='growbutton']"));
+        Thread.sleep(10000);
         theButton.click();
 
         // Verify "Event Triggered" appears
-        WebElement eventText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("growbuttonstatus")));
+        WebElement eventText= driver.findElement(By.id("growbuttonstatus"));
         Assertions.assertEquals("Event Triggered", eventText.getText());
 
     }
 
     @AfterEach
     void tearDown() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.quit();
     }}
 
