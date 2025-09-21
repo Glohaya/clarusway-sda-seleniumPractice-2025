@@ -56,7 +56,7 @@ public class C44_SwagLab extends TestBaseExtentReport {/*
 
 //        4. Log out of the application.
         driver.findElement(By.xpath("//button[.='Open Menu']")).click();
-       WebElement logoutBtn= driver.findElement(By.id("logout_sidebar_link")).click();
+        WebElement logoutBtn= driver.findElement(By.id("logout_sidebar_link")).click();
         Assertions.assertTrue(logoutBtn.isDisplayed(), "Logout button not visible");
         Assertions.assertTrue(driver.getCurrentUrl().contains("index.html"), "Logout failed");
         logger.info("✅ Logged out successfully.");
@@ -75,5 +75,5 @@ public class C44_SwagLab extends TestBaseExtentReport {/*
         test.pass("Logged out successfully");
 
         extent.flush();
-}
     }
+}
